@@ -106,8 +106,7 @@ const loading = document.querySelector('.js-loading');
 const successMessage = document.querySelector('.js-success-message');
 const errorMessage = document.querySelector('.js-error-message');
 
-var form_info_comapy = document.getElementById('getInfo_company');
-form_info_comapy.addEventListener('submit', e => {
+form.addEventListener('submit', e => {
     e.preventDefault();
     if ($("input[name=MASV]").val() == '') {
         alert('BẠN CẦN NHẬP MÃ SV TRA CỨU THÔNG TIN TRƯỚC KHI THỰC HIỆN THAO TÁC NÀY');
