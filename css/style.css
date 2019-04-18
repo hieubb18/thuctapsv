@@ -229,3 +229,65 @@ button {
     padding-left: 15px; } }
 
 /*# sourceMappingURL=style.css.map */
+button.btn_ {
+  margin: 10px auto;
+  width: 100px;
+  border-radius: 5px;
+  font-size: 12px;
+}
+button.report_ {
+  margin: 0 auto;
+  width: 100%;
+  border-radius: 5px;
+  background-color: lightblue;
+  color: black;
+  border: 1px solid lightblue;
+}
+button.report_:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #58a4ec;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transform-origin: 0 50%;
+  transform-origin: 0 50%;
+  -webkit-transition-property: transform;
+  transition-property:none;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out; }
+button.report_:hover:before {
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+  -webkit-transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+  transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66); }
+
+  button.report_:disabled,
+  button.report_[disabled]::before{
+    border: none; 
+  background-color: #cccccc;
+  background:#cccccc;
+  color: #666666;
+  cursor: default;
+}
+.fr-toolbar button::before {
+  background: none;
+}
+
+textarea.noidung {
+  margin-top: 10px;
+  border-top: 5px solid lightcoral;
+  width: 100%;
+  height: 100px;
+  padding: 10px 10px;
+  border-bottom: 2px solid lightgrey;
+  border-right: 1px solid lightgrey;
+  border-left: 1px solid lightgrey;
+  box-shadow: 0px 1px 1px lightgrey;
+}
