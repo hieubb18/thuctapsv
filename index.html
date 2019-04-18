@@ -148,14 +148,7 @@
     </style>
     <script src="./jquery-3.3.1.min.js"></script>
     <script src="./jquery-google-sheet-to-json.min.js"></script>
-    <!-- <link  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/codemirror.min.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.6.0/css/froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.6.0/css/froala_style.min.css" rel="stylesheet" type="text/css" />
-<script>
-$(function() {
-  $('textarea#froala-editor').froalaEditor()
-});</script> -->
+
 </head>
 
 <body>
@@ -232,8 +225,7 @@ $(function() {
                     <div class="form-wrapper">
                         <h3><label for="">Nội dung công việc</label></h3>
                         <p>Lưu ý: Xong ý 'Chấm' xuống dòng <br> - Thực hiện công việc ...... <br> - Thực hiện công việc ...... <br> - Thực hiện công việc ......</p>
-                        <textarea name="noidung-congviec" class="noidung" required="" oninvalid="this.setCustomValidity('Vui lòng nhập Nội dung công việc')" oninput="setCustomValidity('')"></textarea>
-                       
+                        <textarea name="noidung-congviec" class="noidung" id="resizeAuto" placeholder="Nhập nội dung báo cáo của bạn" required></textarea>
                     </div>
                     <button class="" type="submit">báo cáo</button>
 
@@ -242,6 +234,7 @@ $(function() {
                 <p class="js-error-message is-hidden">AHAHA - LỖI RỒI</p>
 
             </div>
+
             <form id="getInfo_company" name="submit-info-company" class="js-showupadteCompany is-hidden">
                 <h3 style="color:red; font-weight:bold;">SINH VIÊN CẬP NHẬT THÔNG TIN CÔNG TY THỰC TẬP</h3>
                 <div class="form-wrapper">
@@ -277,9 +270,10 @@ $(function() {
 
                 <input type="text" hidden name="MASV">
                 <button type="submit">CẬP NHẬT THÔNG TIN C.TY THỰC TẬP</button>
+                <p class="js-success-message is-hidden" style="color:red">CẬP NHẬT THÀNH CÔNG</p>
+                <p class="js-error-messag is-hidden">AHAHA - LỖI RỒI</p>
             </form>
-            <p class="js-success-message is-hidden" style="color:red">CẬP NHẬT THÀNH CÔNG</p>
-            <p class="js-error-message is-hidden">AHAHA - LỖI RỒI</p>
+
             <form name="submit-to-google-sheet" class="js-showupdate is-hidden">
                 <h3 style="color:red; font-weight:bold;">SINH VIÊN CẬP NHẬT THÔNG TIN CÁ NHÂN</h3>
                 <div class="form-wrapper">
@@ -307,10 +301,6 @@ $(function() {
         <script src="./promise-polyfill.js"></script>
         <script src="./whatwg-fetch.js"></script>
 
-<!-- 
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/codemirror.min.js"></script>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/mode/xml/xml.min.js"></script>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.6.0//js/froala_editor.pkgd.min.js"></script> -->
         <p style="text-align:center">&copy; 2019 Nguyễn Đình Ánh - nd.anh@hutech.edu.vn - Database: Google Sheet, Host: 
             Github<p>
     </div>
