@@ -53,11 +53,11 @@ function sinhVienGet() {
         'ouab0ad'];
 
     worksheets.forEach(function (worksheet) {
-        $.googleSheetToJSON('1nO2nV65Vi3dZWGlaIOXLEc-_JWEZK16XFbjQVH_3Q0U', worksheet)
+        $.googleSheetToJSON('1XjLtjloEkXKTDAsDLanA6Ace9ujINXbw7dClFAn5yeA', worksheet)
             .done(function (rows) {
                 var strText = "<table border=1>";
                 var strText = "<table class='dtable'>";
-                strText += "<tr> <th>SĐT Giảng Viên</th>  <th>Email GV</th>  <th>Tên GV</th>  <th>Tên SV</th>  <th>Lớp</th> <th>Mã SV</th>  <th>Ngành</th>  <th>Ngày sinh</th>  <th>Email SV</th>  <th>Số ĐT </th>  <th>Môn Học</th> ";
+                strText += "<tr> <th>SĐT Giảng Viên</th>  <th>Email GV</th>  <th>Tên GV</th>  <th>Tên SV</th>  <th>Lớp</th> <th>Mã SV</th>  <th>Ngành</th>  <th>Ngày sinh</th>  <th>Email SV</th>  <th>Số ĐT </th>  <th>Môn Học</th> <th>Tác vụ</th>";
                 var count = 0;
                 rows.forEach(function (row) {
                     var strMaSV = row['masv'].replace(/ /g,'');
@@ -65,7 +65,7 @@ function sinhVienGet() {
                         count++;
                         strText += "<tr>";
                         Object.getOwnPropertyNames(row).forEach(function (name) {
-                            if (name == 'sotc' || name == 'tt' || name == 'mand' || name == 'mamh' || name == 'nhom')
+                            if (name == 'sotc' || name == 'tt' || name == 'mand' || name == 'mamh' || name == 'nhom' )
                                 return;
                             if (name == 'sv-email')
                                 $("input[name=EMAIL]").val(row[name]);
@@ -73,8 +73,13 @@ function sinhVienGet() {
                                 $("input[name=DIENTHOAI]").val(row[name]);
                             var val = [].concat(row[name]).join(' / ');
                             strText += "<td>" + val + "</td>";
+                        
+
                         });
+                        strText += "<td><button class='btn_' onclick='doupdateInfo();'>Cập nhật thông tin</button>";
+                        strText += "<button class='btn_' onclick='doReport();'>Báo cáo</button></td>";
                         strText += "</tr>";
+                        
                     }
                     return;
                 });
@@ -86,7 +91,7 @@ function sinhVienGet() {
                 else {
                     $("#InfoSV").html(strText);
                     $("input[name=MASV]").val(masv);
-					document.querySelector('.js-showupdate').classList.remove('is-hidden');
+					//document.querySelector('.js-showupdate').classList.remove('is-hidden');
                 }
             })
             .fail(function (err) {
@@ -95,13 +100,14 @@ function sinhVienGet() {
     });
 }
 
-const scriptURL = 'https://script.google.com/macros/s/AKfycby_UEQn0LNrCEMAp1z1EoWGqCvfJvn8i9qVX9s2vsgdlZY_Me4/exec';
-const form = document.forms['submit-to-google-sheet'];
+const scriptURL = 'https://script.google.com/macros/s/AKfycbybJxIH0Q7NeJyxyY6HOznOUCMJ1IGPd5-l3SAojmvDLAMGPS3h/exec';
+const form = document.forms['submit-info-company'];
 const loading = document.querySelector('.js-loading');
 const successMessage = document.querySelector('.js-success-message');
 const errorMessage = document.querySelector('.js-error-message');
 
-form.addEventListener('submit', e => {
+var form_info_comapy = document.getElementById('getInfo_company');
+form_info_comapy.addEventListener('submit', e => {
     e.preventDefault();
     if ($("input[name=MASV]").val() == '') {
         alert('BẠN CẦN NHẬP MÃ SV TRA CỨU THÔNG TIN TRƯỚC KHI THỰC HIỆN THAO TÁC NÀY');
@@ -133,4 +139,19 @@ function showErrorMessage(error) {
         errorMessage.classList.remove('is-hidden');
         loading.classList.add('is-hidden');
     },1000);
+}
+
+
+function doupdateInfo(){
+	document.querySelector('.js-showupdate').classList.remove('is-hidden');
+	document.querySelector('.js-showupadteCompany').classList.remove('is-hidden');
+    document.querySelector('.js-showReport').classList.add('is-hidden');
+
+}
+function doReport(){
+    document.querySelector('.js-showupdate').classList.add('is-hidden');
+    document.querySelector('.js-showupadteCompany').classList.add('is-hidden');
+    document.querySelector('.js-showReport').classList.remove('is-hidden');
+
+
 }
