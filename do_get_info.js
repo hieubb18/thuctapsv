@@ -57,7 +57,7 @@ function sinhVienGet() {
             .done(function (rows) {
                 var strText = "<table border=1>";
                 var strText = "<table class='dtable'>";
-                strText += "<tr> <th>SĐT Giảng Viên</th>  <th>Email GV</th>  <th>Tên GV</th>  <th>Tên SV</th>  <th>Lớp</th> <th>Mã SV</th>  <th>Ngành</th>  <th>Ngày sinh</th>  <th>Email SV</th>  <th>Số ĐT </th>  <th>Môn Học</th> <th>Tác vụ</th>";
+                strText += "<tr> <th>SĐT Giảng Viên</th>  <th>Email GV</th>  <th>Tên GV</th>  <th>Tên SV</th>  <th>Lớp</th> <th>Mã SV</th>  <th>Ngành</th>  <th>Ngày sinh</th>  <th>Email SV</th>  <th>Số ĐT </th>  <th>Môn Học</th>";
                 var count = 0;
                 rows.forEach(function (row) {
                     var strMaSV = row['masv'].replace(/ /g,'');
@@ -76,9 +76,10 @@ function sinhVienGet() {
                         
 
                         });
-                        strText += "<td><button class='btn_' onclick='doupdateInfo();'>Cập nhật thông tin</button>";
-                        strText += "<button class='btn_' onclick='doReport();'>Báo cáo</button></td>";
                         strText += "</tr>";
+                        strText += "<div class='tools-sv'><div class='box-sv'><button class='btn_' onclick='doupdateInfo();'>Cập nhật thông tin</button>";
+                        strText += "<button class='btn_' onclick='doReport();'>Báo cáo</button></div></div>";
+
                         
                     }
                     return;
@@ -103,16 +104,17 @@ function sinhVienGet() {
 const scriptURL = 'https://script.google.com/macros/s/AKfycbybJxIH0Q7NeJyxyY6HOznOUCMJ1IGPd5-l3SAojmvDLAMGPS3h/exec';
 const form = document.forms['submit-info-company'];
 const loading = document.querySelector('.js-loading');
-const successMessage = document.querySelector('.js-success-message');
-const errorMessage = document.querySelector('.js-error-message');
+const successMessage = document.querySelector('.js-success-message-update');
+const errorMessage = document.querySelector('.js-error-message-update');
+const id_getInfo_company = document.querySelector('.js-showupadteCompany');
 
 form.addEventListener('submit', e => {
     e.preventDefault();
-    if ($("input[name=MASV]").val() == '') {
+    var value_input = $("input[name=MASV]").val().length;
+    if (value_input == 0) {
         alert('BẠN CẦN NHẬP MÃ SV TRA CỨU THÔNG TIN TRƯỚC KHI THỰC HIỆN THAO TÁC NÀY');
         return false;
     }
-
     showLoadingIndicator();
     fetch(scriptURL, { method: 'POST', body: new FormData(form) })
         .then(response => showSuccessMessage(response))
@@ -129,7 +131,12 @@ function showSuccessMessage(response) {
     setTimeout(() => {
         successMessage.classList.remove('is-hidden');
         loading.classList.add('is-hidden');
+        id_getInfo_company.classList.add('is-hidden');
     },1000);
+    setTimeout(() => {
+        successMessage.classList.add('is-hidden');
+
+    },5000)
 }
 
 function showErrorMessage(error) {
@@ -142,15 +149,23 @@ function showErrorMessage(error) {
 
 
 function doupdateInfo(){
+    
 	document.querySelector('.js-showupdate').classList.remove('is-hidden');
 	document.querySelector('.js-showupadteCompany').classList.remove('is-hidden');
     document.querySelector('.js-showReport').classList.add('is-hidden');
+    document.querySelector('.js-success-message-update').classList.add('is-hidden');
+    document.querySelector('.js-success-message').classList.add('is-hidden');
+
 
 }
 function doReport(){
     document.querySelector('.js-showupdate').classList.add('is-hidden');
     document.querySelector('.js-showupadteCompany').classList.add('is-hidden');
     document.querySelector('.js-showReport').classList.remove('is-hidden');
-
-
+    document.querySelector('.js-success-message-update').classList.add('is-hidden');
+    document.querySelector('.js-success-message').classList.add('is-hidden');
+    
 }
+
+
+
