@@ -77,8 +77,9 @@ function sinhVienGet() {
 
                         });
                         strText += "</tr>";
-                        strText += "<div class='tools-sv'><div class='box-sv'><button class='btn_' onclick='doupdateInfo();'>Cập nhật thông tin</button>";
-                        strText += "<button class='btn_' onclick='doReport();'>Báo cáo</button></div></div>";
+                        strText += "<div class='tools-sv'><div class='box-sv'><div class='box-sv-responsive'><button class='btn_' onclick='doupdateInfo();'>Cập nhật thông tin</button></div>";
+                        strText += "<div class='box-sv-responsive'><button class='btn_' onclick='doReport();'>Báo cáo</button></div><div class='clear'></div></div></div>";
+
 
                         
                     }
