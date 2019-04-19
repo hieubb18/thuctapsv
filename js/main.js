@@ -1,4 +1,4 @@
-var countDownDate = new Date("Apr 1, 2019 23:59:59").getTime();
+var countDownDate = new Date("Apr 22, 2019 23:59:59").getTime();
 var tuan = 7 * 1000 * 60 * 60 * 24;
 
 
