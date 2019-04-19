@@ -4,6 +4,8 @@ const formReport = document.forms['submit-form-report'];
 const loading1 = document.querySelector('.js-loading');
 const successMessage1 = document.querySelector('.js-success-message');
 const errorMessage1 = document.querySelector('.js-error-message');
+const hideformReport = document.querySelector('.js-showNavReports');
+
 var form1 = document.getElementById('form-report');
 form1.addEventListener('submit', e => {
     e.preventDefault();
@@ -21,7 +23,7 @@ form1.addEventListener('submit', e => {
         .catch(error => showErrorMessageReport(error));
 })
 function showLoadingIndicator() {
-    formReport.classList.add('is-hidden');
+    hideformReport.classList.add('is-hidden');
     loading1.classList.remove('is-hidden');
 }
 
@@ -30,6 +32,8 @@ function showSuccessMessageReport(response) {
     setTimeout(() => {
         successMessage1.classList.remove('is-hidden');
         loading1.classList.add('is-hidden');
+        hideformReport.classList.add('is-hidden');
+
     },1000);
     setTimeout(() => {
         successMessage1.classList.add('is-hidden');
