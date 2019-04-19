@@ -67,8 +67,8 @@ get_form_sv.addEventListener('submit', e => {
 })
 
 function showLoadingIndicator() {
-    form.classList.add('is-hidden');
-    loading.classList.remove('is-hidden');
+    form_edit_SV.classList.add('is-hidden');
+    loading_edit_SV.classList.remove('is-hidden');
 }
 
 function showSuccessMessage_edit_SV(response) {
