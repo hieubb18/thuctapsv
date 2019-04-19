@@ -66,16 +66,16 @@
                             <th>Tuần 10</th>
                         </tr>
                         <tr>
-                            <td><button onclick="baocaotuan1();" class="report_" id="tuan1">Nộp báo cáo</button></td>
-                            <td><button onclick="" class="report_" id="tuan2">Nộp báo cáo</button></td>
-                            <td><button onclick="" class="report_" id="tuan3">Nộp báo cáo</button></td>
-                            <td><button onclick="" class="report_" id="tuan4">Nộp báo cáo</button></td>
-                            <td><button onclick="" class="report_" id="tuan5">Nộp báo cáo</button></td>
-                            <td><button onclick="" class="report_" id="tuan6">Nộp báo cáo</button></td>
-                            <td><button onclick="" class="report_" id="tuan7">Nộp báo cáo</button></td>
-                            <td><button onclick="" class="report_" id="tuan8">Nộp báo cáo</button></td>
-                            <td><button onclick="" class="report_" id="tuan9">Nộp báo cáo</button></td>
-                            <td><button onclick="" class="report_" id="tuan10">Nộp báo cáo</button></td>
+                            <td><button onclick="baocaotuan();" class="report_" id="tuan1">Báo cáo</button></td>
+                            <td><button onclick="" class="report_" id="tuan2">Báo cáo</button></td>
+                            <td><button onclick="" class="report_" id="tuan3">Báo cáo</button></td>
+                            <td><button onclick="" class="report_" id="tuan4">Báo cáo</button></td>
+                            <td><button onclick="" class="report_" id="tuan5">Báo cáo</button></td>
+                            <td><button onclick="" class="report_" id="tuan6">Báo cáo</button></td>
+                            <td><button onclick="" class="report_" id="tuan7">Báo cáo</button></td>
+                            <td><button onclick="" class="report_" id="tuan8">Báo cáo</button></td>
+                            <td><button onclick="" class="report_" id="tuan9">Báo cáo</button></td>
+                            <td><button onclick="" class="report_" id="tuan10">Báo cáo</button></td>
 
                         </tr>
                     </tbody>
@@ -83,7 +83,10 @@
 
                 <form id="form-report" name="submit-form-report" class="js-showNavReports is-hidden" novalidate>
                     <h3 style="color:red; font-weight:bold;">SINH VIÊN BÁO CÁO THỰC TẬP CÔNG TY</h3>
-                    <input type="text" hidden name="MASV">
+                    <div class="form-wrapper">
+                            <label for="">Mã số sinh viên</label>
+                            <input style="color:darkred; background-color: lightgrey" type="text" name="MASV" class="form-control" readonly >
+                    </div>
                     <div class="form-wrapper">
                         <h3><label for="">Nội dung công việc</label></h3>
                         <p>Lưu ý: Xong ý 'Chấm' xuống dòng <br> - Thực hiện công việc ...... <br> - Thực hiện công việc ...... <br> - Thực hiện công việc ......</p>
@@ -102,7 +105,7 @@
                 <div class="form-wrapper">
                         <label for="">Mã số sinh viên</label>
                         <input style="color:darkred; background-color: lightgrey" type="text" name="MASV" class="form-control" readonly >
-                    </div>
+                </div>
                 <div class="form-wrapper">
                     <label for="">Thông tin công ty thực tập</label>
                     <input type="text" name="tencongty" placeholder="Tên công ty thực tập?" class="form-control"
