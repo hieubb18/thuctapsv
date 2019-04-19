@@ -90,7 +90,7 @@ a {
     animation: dash 1.5s ease-in-out infinite;
 }
 
-p.js-success-message,p.js-success-message-update {
+p.js-success-message,p.js-success-message-update,p.js-success-message-edit {
     text-align: center;
     font-size: 20px;
     padding: 10px 0px;
