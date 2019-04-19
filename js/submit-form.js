@@ -31,6 +31,9 @@ function showSuccessMessageReport(response) {
         successMessage1.classList.remove('is-hidden');
         loading1.classList.add('is-hidden');
     },1000);
+    setTimeout(() => {
+        successMessage1.classList.add('is-hidden');
+    },5000)
 }
 
 function showErrorMessageReport(error) {
