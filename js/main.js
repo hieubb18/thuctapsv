@@ -235,3 +235,10 @@ function init() {
 }
 
 addEventListener('DOMContentLoaded', init);
+
+
+//Clear contents
+function clearContents(element) {
+  element.value = '';
+}
+
