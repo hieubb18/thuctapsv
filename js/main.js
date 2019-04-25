@@ -219,3 +219,19 @@ function addcontent(){
       }
   }
 }
+
+function resizeTextarea (id) {
+  var a = document.getElementById(id);
+  a.style.height = '110px';
+  a.style.height = a.scrollHeight+'px';
+}
+
+function init() {
+  var a = document.getElementsByTagName('textarea');
+  for(var i=0,inb=a.length;i<inb;i++) {
+     if(a[i].getAttribute('data-resizable')=='true')
+      resizeTextarea(a[i].id);
+  }
+}
+
+addEventListener('DOMContentLoaded', init);
