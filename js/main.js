@@ -188,6 +188,34 @@ var x = setInterval(function() {
 
 // Report base on week 
 function baocaotuan(){
-    document.querySelector('.js-showNavReports').classList.remove('is-hidden');
-}
+  document.querySelector('.js-showNavReports').classList.remove('is-hidden');
 
+
+}
+window.onload = addcontent();
+function addcontent(){
+  var array = [["Tuần 1 ","Thời gian: <strong>Ngày 22/04 -> 28/04 23:59:59</strong>"],
+  ["Tuần 2 ","Thời gian: <strong>Ngày 29/04 -> 05/05 23:59:59</strong>"],
+  ["Tuần 3 ","Thời gian: <strong>Ngày 06/05 -> 12/05 23:59:59</strong>"],
+  ["Tuần 4","Thời gian: <strong>Ngày 13/05 ->  19/05 23:59:59</strong>"],
+  ["Tuần 5","Thời gian: <strong>Ngày 20/05 -> 26/05 23:59:59</strong>"],
+  ["Tuần 6","Thời gian: <strong>Ngày 27/05 -> 02/06 23:59:59</strong>"],
+  ["Tuần 7","Thời gian: <strong>Ngày 03/06 -> 06/06 23:59:59</strong>"],
+  ["Tuần 8","Thời gian: <strong>Ngày 07/06 -> 13/06 23:59:59</strong>"],
+  ["Tuần 9","Thời gian: <strong>Ngày 14/06 -> 20/06 23:59:59</strong>"],
+  ["Tuần 10","Thời gian: <strong>Ngày 21/06 -> 27/06 23:59:59</strong>"]],
+  table = document.getElementById("time-report-tuan");
+  for(var i = 0; i < array.length; i++)
+  {
+      // create a new row
+      var newRow = table.insertRow(table.length);
+      for(var j = 0; j < array[i].length; j++)
+      {
+          // create a new cell
+          var cell = newRow.insertCell(j);
+          
+          // add value to the cell
+          cell.innerHTML = array[i][j];
+      }
+  }
+}
