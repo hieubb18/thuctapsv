@@ -65,7 +65,7 @@ function sinhVienGet() {
                         count++;
                         strText += "<tr>";
                         Object.getOwnPropertyNames(row).forEach(function (name) {
-                            if (name == 'sotc' || name == 'tt' || name == 'mand' || name == 'mamh' || name == 'nhom' )
+                            if (name == 'sotc' || name == 'tt' || name == 'mand' || name == 'mamh' || name == 'nhom' || name =='tuan1-ndbaocao')
                                 return;
                             if (name == 'sv-email')
                                 $("input[name=EMAIL]").val(row[name]);
