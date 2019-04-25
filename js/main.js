@@ -1,4 +1,4 @@
-var countDownDate = new Date("Apr 18, 2019 23:59:59").getTime();
+var countDownDate = new Date("Apr 28, 2019 23:59:59").getTime();
 var tuan = 7 * 1000 * 60 * 60 * 24;
 
 
@@ -24,12 +24,12 @@ var x = setInterval(function() {
   }
   else
   { 
-    if(distanceTuan1 < now)
-    {
-      document.getElementById("tuan1").disabled  = true;         
-      document.getElementById("tuan1").innerHTML  = "Chưa mở";
+    // if(distanceTuan1 < now)
+    // {
+    //   document.getElementById("tuan1").disabled  = false;         
+    //   document.getElementById("tuan1").innerHTML  = "Chưa mở";
 
-    }
+    // }
       for(var i = 0; i<cactuan.length ; i++)
       {
         document.getElementById(cactuan[i+1]).disabled = true;
