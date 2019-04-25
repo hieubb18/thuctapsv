@@ -73,14 +73,11 @@ function sinhVienGet() {
                                 $("input[name=DIENTHOAI]").val(row[name]);
                             var val = [].concat(row[name]).join(' / ');
                             strText += "<td>" + val + "</td>";
-                        
-
                         });
                         strText += "</tr>";
                         strText += "<div class='tools-sv'><div class='box-sv'><div class='box-sv-responsive'><button class='btn_' onclick='doupdateInfo();'>Cập nhật thông tin</button></div>";
                         strText += "<div class='box-sv-responsive'><button class='btn_' onclick='doReport();'>Báo cáo</button></div><div class='clear'></div></div></div>";
-                            
-
+                        
                         
                     }
                     return;
