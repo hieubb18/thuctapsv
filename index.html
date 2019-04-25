@@ -95,13 +95,13 @@
                 <form id="form-report" name="submit-form-report" class="js-showNavReports is-hidden" novalidate>
                     <h3 style="color:red; font-weight:bold;">SINH VIÊN BÁO CÁO THỰC TẬP CÔNG TY</h3>
                     <div class="form-wrapper">
-                            <label for="">Mã số sinh viên</label>
+                            <label for="">Mã số sinh viên của bạn</label>
                             <input style="color:darkred; background-color: lightgrey" type="text" name="MASV" class="form-control" readonly >
                     </div>
                     <div class="form-wrapper">
                         <h3><label for="">Nội dung công việc</label></h3>
                         <p>Lưu ý: Xong ý 'Chấm' xuống dòng <br> - Thực hiện công việc ...... <br> - Thực hiện công việc ...... <br> - Thực hiện công việc ......</p>
-                        <textarea name="noidung-congviec" class="noidung" id="InputTextArea" placeholder="Nhập nội dung báo cáo của bạn" onkeyup="resizeTextarea('InputTextArea')" required></textarea>
+                        <textarea name="noidung-congviec" class="noidung" id="InputTextArea" placeholder="Nhập nội dung báo cáo của bạn" onkeyup="resizeTextarea('InputTextArea')" onfocus="clearContents(this);" required></textarea>
                     </div>
                     <button class="" type="submit">báo cáo</button>
 
