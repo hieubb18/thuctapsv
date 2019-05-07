@@ -137,6 +137,12 @@ function sinhVienGet() {
             alert('BẠN CẦN NHẬP MÃ SV TRA CỨU THÔNG TIN TRƯỚC KHI THỰC HIỆN THAO TÁC NÀY');
             return false;
         }
+        var textar = document.getElementById('InputTextArea').innerHTML;
+        if(textar.length < 20)
+        {
+            alert('XIN LỖI! NỘI DUNG CỦA BẠN QUÁ NGẮN HOẶC ÍT HƠN 20 KÍ TỰ');
+            return false;
+        }
 
         showLoadingIndicatorBaoCao();
         fetch(scriptURLBaoCao, { method: 'POST', body: new FormData(formBaoCao) })
